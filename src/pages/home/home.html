@@ -1,0 +1,52 @@
+<ion-content>
+  <div class="wally_bg" padding>
+    <ion-grid no-padding>
+      <ion-row>
+        <ion-col no-padding>
+          <div class="wally_header">
+            <ion-icon ios="md-menu" md="md-menu"></ion-icon>
+            <span margin-left>
+              WALL-
+              <b>Y</b>
+            </span>
+          </div>
+        </ion-col>
+      </ion-row>
+      <!-- headlines and switch buttons section -->
+      <ion-row>
+        <ion-col>
+          <h5 margin-vertical>Welcome</h5>
+          <div class="wally_switch_btns_container">
+            <div class="wally_switch_btn" [ngClass]="{'active': switch == true}" (click)="switch = true">New</div>
+            <div class="wally_switch_btn" [ngClass]="{'active': switch == false}" (click)="switch = false">Random</div>
+            <!-- active slider -->
+            <div class="wally_switch_btn_wobble" [ngStyle]="{'transform': switch == false ? 'translateX(100%)' : ''}"></div>
+          </div>
+        </ion-col>
+      </ion-row>
+      <!-- main content -->
+      <div class="wally_main" padding>
+        <div class="wally_list_container">
+          <div class="wally_img" [style.backgroundImage]="'url('+ url +')'"></div>
+          <div class="wally_content">
+            <h3 text-capitalize>Ode to simplicity</h3>
+            <h5 text-capitalize>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum cupiditate enim reprehenderit quos vel aliquam ea, distinctio sint officia, sed ullam assumenda vero itaque debitis laboriosam iste est ex illo.</h5>
+            <div class="wally_info">
+              <div style="width: 70%" text-capitalize>
+                  <ion-icon ios="md-pin" md="md-pin"></ion-icon>
+                  New Delhi
+              </div>
+              <div style="width: 30%; justify-content: flex-end">
+                  <ion-icon ios="ios-heart" ios="md-heart" md="md-heart" color="danger"></ion-icon>
+                  514
+              </div>
+            </div>
+            <h6 text-capitalize color="primary">@rawan heuvel</h6>
+          </div>
+        </div>
+        <!-- placeholders -->
+        <!-- <list-placeholder></list-placeholder> -->
+      </div>
+    </ion-grid>
+  </div>
+</ion-content>

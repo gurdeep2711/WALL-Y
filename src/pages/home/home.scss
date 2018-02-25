@@ -1,0 +1,137 @@
+page-home {
+  .wally_bg {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(-45deg, #6a81fc, #fa9db1);
+    color: #fff;
+    height: 100%;
+    width: 100%;
+    font-weight: 300;
+    .grid {
+      height: 100%;
+    }
+    .wally_header {
+      display: flex;
+      font-size: 28px;
+    }
+    .wally_switch_btns_container {
+      position: relative;
+      width: 50vw;
+      font-size: 20px;
+      height: 35px;
+      background: transparent;
+      color: color($colors, light);
+      border: 2px solid color($colors, light);
+      border-radius: 50px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      .wally_switch_btn {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 2;
+      }
+      .wally_switch_btn.active {
+        color: color($colors, primary);
+      }
+      .wally_switch_btn_wobble {
+        height: 100%;
+        width: 50%;
+        position: absolute;
+        border-radius: 50px;
+        top: 0;
+        left: 0;
+        background-color: color($colors, light);
+        z-index: 1;
+        transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+    } // main content styles
+    .wally_main {
+      margin-top: 20px;
+      background-color: #e9e9e9;
+      flex: 1;
+      height: 100%;
+      border-radius: 5vw;
+      box-shadow: 0px 25px 50px rgba(0, 0, 0, 0.35);
+      .wally_list_container {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        border-radius: 5vw;
+        min-height: 20vh;
+        max-height: 20vh;
+        overflow: hidden;
+        background-color: color($colors, light);
+        box-shadow: 10px 20px 50px -20px rgba(0, 0, 0, 0.35);
+        .wally_img {
+          flex: 0.4;
+          width: 100%;
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-size: cover;
+        }
+        .wally_content {
+          flex: 0.6;
+          padding: 16px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center; //variables
+          $font-size: 14px;
+          $line-height: 1.25;
+          $lines-to-show: 2;
+          h3 {
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: color($colors, dark);
+            font-size: $font-size + 6;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+          h5 {
+            color: color($colors, mute);
+            display: -webkit-box;
+            height: $font-size*$line-height*$lines-to-show;
+            font-size: $font-size;
+            line-height: $line-height;
+            -webkit-line-clamp: $lines-to-show;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin-bottom: 5px;
+          }
+          h6 {
+            font-size: $font-size;
+          }
+          .wally_info {
+            display: flex;
+            flex-direction: row;
+            padding: 2px 0;
+            margin-bottom: 5px;
+            div {
+              width: auto;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              font-size: $font-size;
+              display: flex;
+              align-items: center;
+              color: color($colors, mute);
+              ion-icon {
+                margin-right: 8px;
+              }
+            }
+          }
+          h6 {
+            color: color($colors, primary);
+          }
+        }
+      }
+    }
+  }
+}
